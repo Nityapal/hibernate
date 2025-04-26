@@ -10,13 +10,10 @@ public class Student {
 	
 	@Id
 	private int id;
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return this.id+" : "+this.name+" : "+this.city;
-	}
 	private String name;
 	private String city;
+	
+	private Certificate certi;
 	
 	public int getId() {
 		return id;
@@ -27,6 +24,12 @@ public class Student {
 	public String getName() {
 		return name;
 	}
+	public Certificate getCerti() {
+		return certi;
+	}
+	public void setCerti(Certificate certi) {
+		this.certi = certi;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -35,6 +38,11 @@ public class Student {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.id+" : "+this.name+" : "+this.city;
 	}
 	public Student() {
 		super();
