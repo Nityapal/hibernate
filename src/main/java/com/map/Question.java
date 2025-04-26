@@ -1,9 +1,12 @@
 package com.map;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,9 +17,12 @@ public class Question {
 	private int qid;
 	private String ques;
 	
-	@OneToOne
-	@JoinColumn(name = "aid")
-	private Answer answer;
+//	@OneToOne
+//	@JoinColumn(name = "aid")
+//	private Answer answer;
+	
+	@OneToMany(mappedBy = "ques")
+	private List<Answer> answers;
 
 	public int getQid() {
 		return qid;
@@ -34,24 +40,40 @@ public class Question {
 		this.ques = ques;
 	}
 
-	public Answer getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(Answer answer) {
-		this.answer = answer;
-	}
+//	public Answer getAnswer() {
+//		return answer;
+//	}
+//
+//	public void setAnswer(Answer answer) {
+//		this.answer = answer;
+//	}
 
 	public Question() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Question(int qid, String ques, Answer answer) {
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+
+	public Question(int qid, String ques, List<Answer> answers) {
 		super();
 		this.qid = qid;
 		this.ques = ques;
-		this.answer = answer;
-	}	
+		this.answers = answers;
+	}
+
+//	public Question(int qid, String ques, Answer answer) {
+//		super();
+//		this.qid = qid;
+//		this.ques = ques;
+//		this.answer = answer;
+//	}	
+	
 	
 }
