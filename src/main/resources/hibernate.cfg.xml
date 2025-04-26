@@ -15,6 +15,8 @@
 		
 		<mapping class="com.tut.Student" />
 		<mapping class="com.tut.Address" />
+		<mapping class="com.map.Question" />
+		<mapping class="com.map.Answer" />
 		
 		
 	</session-factory>
