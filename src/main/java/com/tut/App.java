@@ -23,28 +23,33 @@ public class App
         //creating student
         Student st= new Student();
         st.setId(56);
-        st.setName("bebe");
+        st.setName("boy");
         st.setCity("hyd");
         System.out.println(st.toString());
         
-        Address ad= new Address();
-        ad.setStreet("street1");
-        ad.setCity("Jodhpur");
-        ad.setOpen(true);
-        ad.setAddedDate(new Date());
-        ad.setX(1234.14);
+        st.setId(36);
+        st.setName("gurll");
+        st.setCity("knp");
+        System.out.println(st.toString());
+        
+//        Address ad= new Address();
+//        ad.setStreet("street1");
+//        ad.setCity("Jodhpur");
+//        ad.setOpen(true);
+//        ad.setAddedDate(new Date());
+//        ad.setX(1234.14);
         
         //reading image
-        FileInputStream fis= new FileInputStream("src/main/java/cs1.jpg");
-        byte[] data= new byte[fis.available()];
-        fis.read(data);
-        ad.setImage(data);
+//        FileInputStream fis= new FileInputStream("src/main/java/cs1.jpg");
+//        byte[] data= new byte[fis.available()];
+//        fis.read(data);
+//        ad.setImage(data);
         
         Session session= factory.openSession();
         ///
         session.beginTransaction();
         session.save(st);
-        session.save(ad);
+        //session.save(ad);
         
         session.getTransaction().commit();
         
