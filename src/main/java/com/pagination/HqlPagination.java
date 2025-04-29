@@ -20,7 +20,7 @@ public class HqlPagination {
 		
 		//implementing pagination
 		q1.setFirstResult(0); //start posn.
-		q1.setMaxResults(5); //end posn. or size
+		q1.setMaxResults(5); // size
 		
 		List<Student> ls =q1.list();
 		for(Student st: ls) {

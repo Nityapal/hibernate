@@ -2,6 +2,7 @@ package com.map;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,7 +22,7 @@ public class Question {
 //	@JoinColumn(name = "aid")
 //	private Answer answer;
 	
-	@OneToMany(mappedBy = "ques")
+	@OneToMany(mappedBy = "ques",cascade= CascadeType.ALL)
 	private List<Answer> answers;
 
 	public int getQid() {
