@@ -33,6 +33,8 @@ public class CascadeExample {
 		ls.add(a3);
 		
 		q1.setAnswers(ls);	
+		
+		
 		Transaction tx= s.beginTransaction();
 		s.save(q1);
 		
